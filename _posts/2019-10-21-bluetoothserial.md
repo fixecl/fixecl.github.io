@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "蓝牙串口HC-05使用及调试"
-date:   2019-10-21 12:24:54
+date:   2019-10-21 16:21:23
 categories: 硬件
 tags: bluetooth serial
 ---
