@@ -1,2 +1,3 @@
-# siera
-jekyll theme
+# my personal blog
+
+

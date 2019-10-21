@@ -1,115 +1,57 @@
-/*
-	Future Imperfect by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/**
+ * some JavaScript code for this blog theme
+ */
+/* jshint asi:true */
 
-(function($) {
+/////////////////////////header////////////////////////////
+/**
+ * clickMenu
+ */
+(function() {
+  if (window.innerWidth <= 770) {
+    var menuBtn = document.querySelector('#headerMenu')
+    var nav = document.querySelector('#headerNav')
+    menuBtn.onclick = function(e) {
+      e.stopPropagation()
+      if (menuBtn.classList.contains('active')) {
+        menuBtn.classList.remove('active')
+        nav.classList.remove('nav-show')
+      } else {
+        nav.classList.add('nav-show')
+        menuBtn.classList.add('active')
+      }
+    }
+    document.querySelector('body').addEventListener('click', function() {
+      nav.classList.remove('nav-show')
+      menuBtn.classList.remove('active')
+    })
+  }
+}());
 
-	skel.breakpoints({
-		xlarge:	'(max-width: 1680px)',
-		large:	'(max-width: 1280px)',
-		medium:	'(max-width: 980px)',
-		small:	'(max-width: 736px)',
-		xsmall:	'(max-width: 480px)'
-	});
+//////////////////////////back to top////////////////////////////
+(function() {
+  var backToTop = document.querySelector('.back-to-top')
+  var backToTopA = document.querySelector('.back-to-top a')
+  // console.log(backToTop);
+  window.addEventListener('scroll', function() {
 
-	$(function() {
+    // 页面顶部滚进去的距离
+    var scrollTop = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
 
-		var	$window = $(window),
-			$body = $('body'),
-			$menu = $('#menu'),
-			$sidebar = $('#sidebar'),
-			$main = $('#main');
+    if (scrollTop > 200) {
+      backToTop.classList.add('back-to-top-show')
+    } else {
+      backToTop.classList.remove('back-to-top-show')
+    }
+  })
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+  // backToTopA.addEventListener('click',function (e) {
+  //     e.preventDefault()
+  //     window.scrollTo(0,0)
+  // })
+}());
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
-
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
-
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
-
-		// IE<=9: Reverse order of main and sidebar.
-			if (skel.vars.IEVersion <= 9)
-				$main.insertAfter($sidebar);
-
-		// Menu.
-			$menu
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right',
-					target: $body,
-					visibleClass: 'is-menu-visible'
-				});
-
-		// Search (header).
-			var $search = $('#search'),
-				$search_input = $search.find('input');
-
-			$body
-				.on('click', '[href="#search"]', function(event) {
-
-					event.preventDefault();
-
-					// Not visible?
-						if (!$search.hasClass('visible')) {
-
-							// Reset form.
-								$search[0].reset();
-
-							// Show.
-								$search.addClass('visible');
-
-							// Focus input.
-								$search_input.focus();
-
-						}
-
-				});
-
-			$search_input
-				.on('keydown', function(event) {
-
-					if (event.keyCode == 27)
-						$search_input.blur();
-
-				})
-				.on('blur', function() {
-					window.setTimeout(function() {
-						$search.removeClass('visible');
-					}, 100);
-				});
-
-		// Intro.
-			var $intro = $('#intro');
-
-			// Move to main on <=large, back to sidebar on >large.
-				skel
-					.on('+large', function() {
-						$intro.prependTo($main);
-					})
-					.on('-large', function() {
-						$intro.prependTo($sidebar);
-					});
-
-	});
-
-})(jQuery);
+//////////////////////////hover on demo//////////////////////////////
+(function() {
+  var demoItems = document.querySelectorAll('.grid-item')
+}());
