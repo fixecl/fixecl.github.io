@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "蓝牙串口HC-05使用及调试"
+title:  "无人机接收机PPM协议"
 date:   2019-10-21 23:00:53
 categories: 硬件
 tags: UAV
@@ -12,7 +12,7 @@ tags: UAV
 ### PPM协议
 无人机遥控器与飞控之间传输最常用的就是PWM，PPM，S.BUS等协议。其中PPM协议只需要一根线就可以传输，避免了PWM需要多路才能传输多个通道的问题。
 下面是PPM协议的波形图
-[PPM]({{site.baseurl}}/images/ppmprotocol/ppm.png)
+![PPM]({{site.baseurl}}/images/ppmprotocol/ppm.png)
 PPM协议最多传输20个通道，使用一个定时器就可以轻松解决了
 
 ### PPM协议用于模拟器
