@@ -13,6 +13,3 @@ type: page
 
 
 
-## Comments
-
-{% include comments.html %}
