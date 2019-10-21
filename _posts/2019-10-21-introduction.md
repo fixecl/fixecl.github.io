@@ -2,8 +2,8 @@
 layout: post
 title:  "启用该博客（在线笔记）-写在前面"
 date:   2019-10-21 12:24:54
-categories: intro
-tags: intro
+categories: 
+tags: 
 ---
 
 * content
