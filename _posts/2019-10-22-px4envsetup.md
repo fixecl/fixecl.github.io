@@ -11,6 +11,7 @@ tags: UAV ubuntu
 
 本文基于PX4官方教程：
 [PX4-Developer](https://dev.px4.io/master/zh/index.html)
+
 [PX4-Env](http://dev.px4.io/v1.9.0/zh/setup/dev_env_linux.html)
 基于Ubuntu18.04
 
@@ -32,52 +33,85 @@ sudo apt update
 # 必备软件
 sudo apt install python-argparse git-core wget zip \
     python-empy qtcreator cmake build-essential genromfs -y
+#安装支持库
+sudo apt-get install openocd flex bison libncurses5-dev autoconf \
+    texinfo build-essential libftdi-dev libtool zlib1g-dev  -y
 ```
 
 ##### 安装仿真包
-安装仿真工具包，如果事先安装有java了就不用安装openjdk了
+安装仿真工具包，官网推荐安装openjdk，我使用openjdk无法打开jMAVSim，还是选择安装Orcale的Jdk
+###### 安装openjdk
 ```
-# 仿真工具
-sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt update
+# 仿真工具 添加openjdk源可选
+# sudo add-apt-repository ppa:openjdk-r/ppa
+# sudo apt update
 sudo apt install openjdk-8-jre
-sudo apt install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-8-jdk openjdk-8-jre clang-3.5 lldb-3.5 -y
+sudo apt install ant protobuf-compiler libeigen3-dev libopencv-dev openjdk-8-jdk openjdk-8-jre -y
+sudo apt install clang-3.5 lldb-3.5 -y
+```
+###### 安装Orcale JDK
+下载压缩包解压;
+在```/etc/profile```中添加环境变量;
+安装依赖包
+```
+sudo apt install ant protobuf-compiler libeigen3-dev libopencv-dev -y
+sudo apt install clang-3.5 lldb-3.5 -y
 ```
 
 ##### 安装arm-none-eabi-工具链
-如果系统有高版本的工具链，卸载之
+###### 直接安装
+现在高版本也可以直接编译了（实测2017q2可以）
+```
+sudo apt install gcc-arm-none-eabi
+```
+###### 手动安装
 下载该版本：https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q2-update/+download/gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2
 解压,添加环境变量
 ```
 tar -jxf gcc-arm-none-eabi-5_4-2016q2-20160622-linux.tar.bz2
+sudo mv gcc-arm-none-eabi-5_4-2016q2 /opt
 gedit /etc/profile
 ```
 最后一行加入
 ```
-export PATH=$PATH:/usr/..../gcc-arm-none-eabi-.../bin
+export PATH=$PATH:/opt/gcc-arm-none-eabi-5_4-2016q2/bin
 ```
 环境变量生效
 ```
 source /etc/profile
 ```
+最好重启一下
 
 ##### 安装pip，安装python包
 ```
 sudo apt install python-pip
-pip install jinja2 toml numpy pyyaml
+sudo pip install jinja2 toml numpy pyyaml pyserial empy
+```
+注意！ 系统默认python版本为2.7，而有的包目前已经不支持python2.7了，所以需要限制版本。
+比如对于numpy，numpy1.17以上就不支持python2.7了，所以安装方式如下，其他所需包也一样
+```
+pip install numpy==1.16
 ```
 
-
 ### 下载PX4代码
-直接git clone,不要使用zip压缩包，找一个网络环境好的地方
+直接git clone,不要使用zip压缩包，找一个网络环境好的地方，或者开VPN
+(我的方法是在windows下开ssr，然后用WSL环境git下来，打成tar包，再拷贝到虚拟机里面解压，不直接用WSL编译是因为WSL编译速度较慢，虚拟机的ubuntu更快)
 ```
 git clone https://github.com/PX4/Firmware.git
 cd Firmware
+git submodule init
 git submodule update --init --recursive
+# 初始化并clone子模块，recursive参数表明递归进行
 ```
+PX4固件完整clone下来大概有836M，所以在国内网络条件一定要好
 
 ### 测试模拟器
 ```
 make px4_sitl jmavsim
 ```
 等待一段时间后将会出现一个3D渲染的无人机飞行窗口
+
+### 编译固件
+```
+make px4fmu-v2_default
+```
