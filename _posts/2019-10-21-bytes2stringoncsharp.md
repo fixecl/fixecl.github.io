@@ -11,7 +11,7 @@ tags: C# byte
 
 ### byte转16进制字符串string  
 
-```  
+``` cs 
 public static string ByteToHex(byte b)  
 {  
     string cs = Convert.ToString(b, 16);  
@@ -25,7 +25,7 @@ public static string ByteToHex(byte b)
 
 ### byte[]转16进制字符串string  
 
-```  
+``` cs 
 public static string BytesToHex(byte[] b, int length)  
 {  
     string s = "";  

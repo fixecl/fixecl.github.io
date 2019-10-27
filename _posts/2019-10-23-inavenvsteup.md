@@ -18,7 +18,7 @@ inav固件与CleanFilght BetaFlight关系紧密，所以下文对另外两种固
 打开win10应用商店，搜索ubuntu，下载18.04版本，安装  
 安装完成后主要需要修改源，修改```/etc/apt/sources.list```文件内容为：  
 
-```  
+``` bash
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse  
 deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse  
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse  
@@ -33,16 +33,16 @@ deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restri
 
 ### 安装交叉编译工具  
 安装make工具  
-```  
+``` bash 
 sudo apt install make  
 ```  
 #### 安装gcc方法1 直接更新  
 首先更新源  
-```  
+``` bash 
 sudo apt update  
 ```  
 安装交叉编译工具  
-```  
+``` bash 
 sudo apt install gcc-arm-none-eabi  
 ```  
 #### 安装gcc方法2 下载deb包安装  
@@ -91,7 +91,7 @@ MATEKF722 MATEKF405OSD MATEKF405_SERVOS6
 如果需要修改默认目标飞控  
 打开"/Makefile"  
 修改TARGET即可  
-```  
+``` makefile
 TARGET    ?= SPRACINGF3  
 ```  
 
@@ -107,7 +107,7 @@ TARGET    ?= SPRACINGF3
 
 #### 配置VSCode调试环境  
 在左侧打开VSCode调试页，“添加配置”->"Cortex Debug"，修改右侧配置文件  
-```  
+``` json 
 "name": "Cortex Debug",  
 "cwd": "${workspaceRoot}",  
 "executable": "${workspaceRoot}/obj/main/inav_SPRACINGF3.elf",  
