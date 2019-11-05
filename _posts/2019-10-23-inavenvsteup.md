@@ -2,7 +2,7 @@
 layout: post  
 title:  "搭建WSL的inav固件开发环境"  
 date:  2019-10-24 22:02:12  
-categories: 硬件  
+categories: 无人机  
 tags: UAV ubuntu inav  
 ---  
 

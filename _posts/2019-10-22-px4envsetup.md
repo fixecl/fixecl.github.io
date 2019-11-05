@@ -2,7 +2,7 @@
 layout: post  
 title:  "搭建PX4开发环境"  
 date:  2019-10-22 13:30:53  
-categories: 硬件  
+categories: 无人机 
 tags: UAV ubuntu  
 ---  
 
