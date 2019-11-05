@@ -7,7 +7,7 @@
 
 # Site settings
 title: Fixecl 's Notes
-brief-intro: 保持对新事物的探索精神
+brief-intro: Keep curiosity
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fixecl.github.io" # the base hostname & protocol for your site
 

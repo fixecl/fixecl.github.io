@@ -1,9 +1,9 @@
 ---  
 layout: post  
-title:  "Linux Shell Bash脚本"  
-date:  2019-11-05 15:07:23  
-categories: ubuntu  
-tags: ubuntu  
+title:  "Shell脚本"
+date:  2019-11-05 15:07:23
+categories: ubuntu
+tags: ubuntu
 ---  
 
 * content  
