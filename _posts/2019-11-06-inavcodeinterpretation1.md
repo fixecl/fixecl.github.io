@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title:  "inav代码解读1"  
+title:  "inav代码解读1 - 初步了解软硬件"  
 date:  2019-11-06 11:10:45  
 categories: 无人机  
 tags: UAV inav  
