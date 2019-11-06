@@ -16,8 +16,7 @@ Linux中Shell作为用户管理的界面,接触和使用非常广泛,利用Bash�
 - Bourne Shell:sh;ksh;Bash  
 - C Shell:csh;tcsh  
 
-Shell脚本第一行：  
-```#!/bin/bash```
+Shell脚本第一行：```#!/bin/bash```  
 
 ### Shell快捷键
 - Ctrl+C 强制终止当前命令  
@@ -108,15 +107,17 @@ x=${x}789 #再叠加一次
 用户变量只能再当前shell中生效，环境变量可以在shell和子shell中生效(全局变量)  
 用户自定义环境变量：```export```  
 查看系统变量：```env```  
+
 配置文件 | 系统启动先后顺序 | 切换用户sudo先后顺序 | 作用
-- | - | - | -
-/etc/profile        | 1 |   | 登录时配置，设置USER,LOGNAME,MAIL,PATH,HOSTNAME,HISTSIZE,umask，调用/etc/profile.d/.sh
-/etc/profile.d/*.sh | 2 | 2 |
-~/.bash_profile     | 3 |   | 把$HOME/bin加入PATH
-~/.bashrc           | 4 |   | 定义别名
+-|-|-|-
+/etc/profile        | 1 | x | 登录时配置，设置USER,LOGNAME,MAIL,PATH,HOSTNAME,HISTSIZE,umask，调用/etc/profile.d/.sh
+/etc/profile.d/*.sh | 2 | 2 | 各个子配置文件
+~/.bash_profile     | 3 | x | 把$HOME/bin加入PATH
+~/.bashrc           | 4 | x | 定义别名
 /etc/bashrc         | 5 | 1 | PS1变量，umask，调用/etc/profile.d/.sh
+
 注意，系统登录时各个配置文件顺序执行，依次调用下一个文件，如果其中某个文件删了或清空了，则之后的不会执行，可能出现奇奇怪怪的错误  
-其他配置文件：
+其他配置文件：  
 - ~/.bash_logout 系统注销时的配置文件
 - ~/.bash_history 记录历史命令
 - /etc/issue 本地终端登录前显示欢迎信息
@@ -158,7 +159,7 @@ locale -a 查询所有语系
 ### 运算符
 #### declare声明变量类型
 ```declare [+/-][选项] 变量名```  
-```-```代表设定类型属性；```+```代表取消属性  
+-代表设定类型属性；+代表取消属性  
 - -a 数组型
 - -i 整型
 - -x 环境变量
