@@ -15,7 +15,7 @@ tags: UAV inav
 ## 从飞控启动入口说起
 飞控加电，stm32主控启动，stm32的启动默认是从0x8000000地址启动，初始运行的汇编位于```./src/main/startup/startup_stm32f30x_md_gcc.S```，在这里将对stm32进行堆栈初始化，确定中断向量地址等等一系列操作，同一般的stm32开发相同，之后将转入```main()```函数  
 
-```C
+```c
 int main(void)
 {
     init();
@@ -38,7 +38,7 @@ int main(void)
 任务调度器位于```./src/main/scheduler/scheduler.c```中，这里简单介绍一下调度器，该调度器是非抢占式的多优先级的调度器，任务被列在```./src/main/fc/fctasks.c```的```cfTasks[TASK_SYSTEM]```结构体中，调度器依据各个任务的排序和优先级进行调度，任务具有两种方式：一种是事件驱动，一种是周期时间驱动。  
 因此，我们重点关注一下```cfTasks[TASK_SYSTEM]```,下面截取一小段  
 
-```C
+```c
 //任务定义
 cfTask_t cfTasks[TASK_COUNT] = {
     [TASK_SYSTEM] = { 
