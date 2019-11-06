@@ -2,8 +2,8 @@
 layout: post  
 title:  "Shell脚本"
 date:  2019-11-05 15:07:23
-categories: ubuntu
-tags: ubuntu
+categories: linux/ubuntu
+tags: linux/ubuntu
 ---  
 
 * content  
