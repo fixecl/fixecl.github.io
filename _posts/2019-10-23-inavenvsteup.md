@@ -59,7 +59,7 @@ github地址： https://github.com/iNavFlight/inav
 输入make，在我的笔记本上约1分钟后编译完成（WSL下编译比较慢，相比之下，直接在Linux下直接编译会快几倍哦）  
 ![Build]({{site.baseurl}}/images/inavenvsetup/build.png)  
 至此编译成功  
-不过会有消息```fatal: 不是一个 git 仓库（或者直至挂载点 /mnt 的任何父目录）```，其实可以不用管，如果想要去掉可以了解下git的知识就好了  
+不过会有消息```fatal: 不是一个 git 仓库（或者直至挂载点 /mnt 的任何父目录）```，其实可以不用管，如果想要去掉，了解下git的知识就会了  
 
 ### 配置编辑环境  
 #### windows安装vscode  

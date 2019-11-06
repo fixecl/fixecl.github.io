@@ -1,9 +1,9 @@
 ---  
 layout: post  
 title:  "Linux命令"  
-date:  2019-11-05 09:34:12  
-categories: linux  
-tags: linux  ubuntu
+date:  2019-11-05 09:34:12
+categories: linux
+tags: linux ubuntu
 ---  
 
 * content  
