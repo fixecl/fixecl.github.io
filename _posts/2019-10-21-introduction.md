@@ -17,3 +17,7 @@ tags:
 
 感谢网站的主题设计者[HyG](https://github.com/Gaohaoyang)  
 
+## Markdown语法注意事项
+jekyll对Markdown的某些语法支持不好，在这里写下MD语法注意事项  
+- 避免以三个反引号为行开始
+- 表格上下必须加一个空行
