@@ -77,7 +77,7 @@ cfTask_t cfTasks[TASK_COUNT] = {
         [TASK_ATTI] = {
             .taskName = "ATTITUDE",
             .taskFunc = taskAttitude,  //更新高度计数据的任务函数
-            .desiredPeriod = TASK_PERIOD_HZ(60), //With acc LPF at 15Hz 60Hz attitude refresh should be enough
+            .desiredPeriod = TASK_PERIOD_HZ(60), 
             .staticPriority = TASK_PRIORITY_HIGH,
         },
 
@@ -97,7 +97,7 @@ cfTask_t cfTasks[TASK_COUNT] = {
     [TASK_SERIAL] = {    //串口接收 处理msp消息
         .taskName = "SERIAL",
         .taskFunc = taskHandleSerial,
-        .desiredPeriod = TASK_PERIOD_HZ(100),     // 100 Hz should be enough to flush up to 115 bytes @ 115200 baud
+        .desiredPeriod = TASK_PERIOD_HZ(100),    
         .staticPriority = TASK_PRIORITY_LOW,
     },
 
@@ -105,7 +105,7 @@ cfTask_t cfTasks[TASK_COUNT] = {
     [TASK_BEEPER] = {
         .taskName = "BEEPER",
         .taskFunc = beeperUpdate,   //更新蜂鸣器任务处理
-        .desiredPeriod = TASK_PERIOD_HZ(100),     // 100 Hz
+        .desiredPeriod = TASK_PERIOD_HZ(100),    
         .staticPriority = TASK_PRIORITY_MEDIUM,
     },
 #endif
@@ -122,7 +122,7 @@ cfTask_t cfTasks[TASK_COUNT] = {
     [TASK_GPS] = {
         .taskName = "GPS",
         .taskFunc = taskProcessGPS,
-        .desiredPeriod = TASK_PERIOD_HZ(25),      // GPS usually don't go raster than 10Hz
+        .desiredPeriod = TASK_PERIOD_HZ(25),    
         .staticPriority = TASK_PRIORITY_MEDIUM,
     },
 #endif
@@ -131,8 +131,9 @@ cfTask_t cfTasks[TASK_COUNT] = {
 ```
 
 在该结构体中能看到各个任务的名称，处理函数，优先级，运行周期等各个数据，任务主要分为以下：  
-- 主处理函数```taskMainPidLoop()```，在该任务中将进行PID解算，飞行模式控制，导航处理（导航不单独占一个任务）
-- 处理主控输入输出：传感器数据、接收机输入、蜂鸣器等，如```TASK_RC```，```TASK_GPS```，```TASK_BEEP```等
+- 主处理任务：```taskMainPidLoop()```，在该任务中将进行PID解算，飞行模式控制，导航处理（导航不单独占一个任务）
+- 接收机处理任务：```TASK_RX```，该任务会进行失控保护判断，飞行器解锁和锁定等动作也由该任务执行
+- 处理主控输入输出：传感器数据、接收机输入、蜂鸣器等，如，```TASK_GPS```，```TASK_BEEP```等
 - 其他辅助任务
 - 处理MSP数传任务：```TASK_SERIAL```
 
