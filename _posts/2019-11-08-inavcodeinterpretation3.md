@@ -69,7 +69,6 @@ extern const char *armingDisableFlagNames[];
 
 在该函数中，将对以上各项进行检测，如果有不达标的项目，将会阻止飞行器解锁。  
 其中有一个```navigationBlockArming()```函数(该函数在```./src/main/src/navigation/navigation.c```中)是是对导航状态的判断，如果导航模块阻止，则会禁止解锁  
-### 
 
 下一节，将把重心调整到导航模块(navigation)，导航模块虽然作为一个可选的模块，没有与inav其他非导航相关的飞行模式集成在一起，但是这使得导航模块特别紧凑，其内部有单独的配置数据和导航状态向量机，是inav实现自动飞行的重要部分。
 

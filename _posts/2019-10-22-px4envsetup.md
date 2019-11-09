@@ -16,11 +16,15 @@ tags: UAV ubuntu
 
 ## 系统配置  
 
-### 权限  
+### 系统配置  
 为防止串口连接问题，而tty设备属于dialout用户组，因此需要将用户加入dialout用户组  
 ``` bash 
 sudo usermod -a -G dialout $USER  
 ```  
+同时，卸载modemManager  
+```bash
+sudo apt remove modemmanager -y
+```
 注销，重新登陆  
 既然已经把用户加入了该组，那么之后就避免使用root用户来进行开发和操作  
 
