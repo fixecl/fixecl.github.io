@@ -77,7 +77,7 @@ inav的代码可以从github上直接下载，详细安装参考前面的文章
 │   ├── main  #几乎所有源代码都在这个文件夹内，我们主要看这个文件夹内的代码
 │   │   ├── blackbox   #黑盒子，用于飞行时进行日志记录
 │   │   ├── build      #飞控的版本信息，调试选项等
-│   │   ├── cms
+│   │   ├── cms        #OSD 灯条等
 │   │   ├── common     #公用的函数，包括Math，CRC，字符串等
 │   │   ├── config     #各个模块的配置
 │   │   ├── drivers    #各个传感器，模块，以及IIC SPI等的驱动
@@ -114,8 +114,8 @@ inav的代码可以从github上直接下载，详细安装参考前面的文章
 │   │   │   └── YUPIF7
 │   │   ├── telemetry          #数传模块
 │   │   ├── uav_interconnect   #无人机交互连接功能
-│   │   ├── vcp
-│   │   ├── vcpf4
+│   │   ├── vcp                #虚拟串口
+│   │   ├── vcpf4              #虚拟串口(只在F4上有)
 │   │   └── vcp_hal
 │   ├── test
 │   └── utils
