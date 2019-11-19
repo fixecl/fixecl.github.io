@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title:  "inav代码解读5 - inav的导航状态"  
+title:  "inav代码解读5 - inav的导航处理流程"  
 date:  2019-11-19 13:13:52  
 categories: 无人机  
 tags: UAV inav  
