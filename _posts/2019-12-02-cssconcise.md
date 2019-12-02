@@ -108,9 +108,9 @@ TAG：```<a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>、<var>、<
 一行；宽高顶底边距不可设；宽为其包涵的内容的宽度，不可改
 #### 内联块状元素 
 TAG：```<img>、<input>…```  
-```display:inline```：转换为内联元素  
-```display:block```：转换为块状元素  
-```display:inline-block```：转换为内联块状元素  
+转换为内联元素```display:inline```  
+转换为块状元素```display:block```  
+转换为内联块状元素```display:inline-block```  
 一行；宽高行高顶底边距可设定  
 
 ### 盒模型  
