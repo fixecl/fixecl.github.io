@@ -101,13 +101,13 @@ text-align:center/left/right /*居中 居左 居右*/
 
 ### 元素分类  
 #### 块状元素
-```<div>、<p>、<h1>...<h6>、<ol>、<ul>、<dl>、<table>、<address>、<blockquote> 、<form>…```  
+TAG：```<div>、<p>、<h1>...<h6>、<ol>、<ul>、<dl>、<table>、<address>、<blockquote> 、<form>…```  
 另起一行开始；宽高行高顶底边距可设定；宽度默认=父元素  
 #### 内联元素
-```<a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>、<var>、<cite>、<code>…```  
+TAG：```<a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>、<var>、<cite>、<code>…```  
 一行；宽高顶底边距不可设；宽为其包涵的内容的宽度，不可改
 #### 内联块状元素 
-```<img>、<input>…```  
+TAG：```<img>、<input>…```  
 ```display:inline```：转换为内联元素  
 ```display:block```：转换为块状元素  
 ```display:inline-block```：转换为内联块状元素  
@@ -170,16 +170,16 @@ border-color:red;   /* #xxx x为16进制数*/
 ### 缩写  
 #### 数值缩写  
 如```margin```，```padding```等  
-```top，right，bottom，left```（顺时针）  
+方向```top，right，bottom，left```（顺时针）  
 四值相同：只写一个  
 上下和左右分别相等：写两个-上-右  
 只有左右相等：写三个-上-右-下  
 #### 颜色缩写  
-```Color:#336699``` 等价于 ```#369```  
+颜色```Color:#336699``` 等价于 ```#369```  
 #### 字体缩写  
 至少要指定 ```font-size``` 和 ```font-family``` 属性  
 缩写时 ```font-size``` 与 ```line-height``` 中间要加入```/```斜扛  
-```font:12px/1.5em  "宋体",sans-serif;```  
+如```font:12px/1.5em  "宋体",sans-serif;```  
 
 ### 视觉  
 #### 颜色  
