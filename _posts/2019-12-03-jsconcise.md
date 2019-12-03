@@ -1,7 +1,7 @@
 ---  
 layout: post  
 title:  "Javascript笔记"  
-date:  2019-12-3 8:31:12  
+date:  2019-12-3 01:31:12  
 categories: 前端  
 tags: JS  
 ---  
@@ -12,9 +12,9 @@ tags: JS
 ### 加入方式
 - 直接嵌入  
 ```js
-<Script type="text/javascript"> 
+<script type="text/javascript"> 
 //代码
-</Script>
+</script>
 ```
 - 文件导入  
 ```js
@@ -77,6 +77,7 @@ myarray.length可以查看和修改数组长度
         alert("您确定离开该网页吗？");   
     } 
 ```
+
 事件 | 说明
 -|-
 onclick | 鼠标单击
@@ -92,17 +93,17 @@ onunload | 关闭网页
 ### 窗口相关
 输出网页内容```document.write```  回车```"<br>"```  
 警告消息对话框```alert```  
-```confirm(str)```确认消息对话框 返回boolean  
-```prompt(display_str,default_str)```提问消息对话框  
+确认消息对话框 返回boolean  ```confirm(str)```  
+提问消息对话框  ```prompt(display_str,default_str)```  
 点确定返回文本内容，点取消返回null  
-```window.open([URL],[窗口名称],[参数])``` 返回窗口对象  
-```"_top"、"_blank"、"_self"```具有特殊意义的窗口名称:  
+返回窗口对象  ```window.open([URL],[窗口名称],[参数])```   
+具有特殊意义的窗口名称:  
 -  _blank：在新窗口显示目标网页
 -  _self：在当前窗口显示目标网页
--  _top：框架网页中在上部窗口中显示目标网页
+-  _top：框架网页中在上部窗口中显示目标网页  
 
-```window.close()```关闭本窗口  
-```窗口对象.close()```关闭对应窗口  
+关闭本窗口```window.close()```  
+关闭对应窗口```窗口对象.close()```  
 
 ### JS DOM
 #### DOM节点：
@@ -123,21 +124,28 @@ elementObject.getAttribute(name)//获取属性值
 elementNode.setAttribute(name,value)//设置属性
 ```
 
-#### DOM 节点有三个重要的属性
-- nodeName : 节点的名称
-- nodeValue ：节点的值
-- nodeType ：节点的类型
-##### nodeName 属性: 节点的名称，是只读的。
-1. 元素节点的 nodeName 与标签名相同
-2. 属性节点的 nodeName 是属性的名称
-3. 文本节点的 nodeName 永远是 #text
-4. 文档节点的 nodeName 永远是 #document
-##### nodeValue 属性：节点的值
-1. 元素节点的 nodeValue 是 undefined 或 null
-2. 文本节点的 nodeValue 是文本自身
-3. 属性节点的 nodeValue 是属性的值
-##### nodeType 属性: 节点的类型，是只读的
+#### DOM节点三个重要属性
+- nodeName : 节点的名称  
+- nodeValue ：节点的值  
+- nodeType ：节点的类型  
+
+##### nodeName 属性:
+节点的名称，是只读的。  
+1. 元素节点的 nodeName 与标签名相同  
+2. 属性节点的 nodeName 是属性的名称  
+3. 文本节点的 nodeName 永远是 #text  
+4. 文档节点的 nodeName 永远是 #document  
+
+##### nodeValue 属性
+节点的值  
+1. 元素节点的 nodeValue 是 undefined 或 null  
+2. 文本节点的 nodeValue 是文本自身  
+3. 属性节点的 nodeValue 是属性的值  
+
+##### nodeType 属性
+节点的类型，是只读的  
 以下常用的几种结点类型:
+
 元素类型 | 节点类型
 -|-
   元素    |     1
@@ -149,15 +157,17 @@ elementNode.setAttribute(name,value)//设置属性
 注意: 浏览器兼容问题，chrome、firefox等浏览器标签之间的空白也算是一个文本节点。
 
 #### 节点属性
+
 方法 | 说明
-- | -
+-|-
 nodeName | 返回一个字符串，给定节点的名字
 nodeType | 返回一个整数，代表节点的类型
 nodeValue | 返回给定节点的当前值
 
 访问节点树
+
 方法 | 说明
-- | -
+-|-
 childNodes | 返回一个子节点的数组
 firstChild | 返回第一个子节点
 lastChild | 返回最后一个子节点
@@ -166,8 +176,9 @@ nestSibling | 返回给定节点的下一个子节点
 previousSibling | 返回给定节点的上一个子节点
 
 DOM操作
+
 方法 | 说明
-- | -
+-|-
 createElement(element) | 创建一个新元素节点
 createTextNode() | 创建一个包含着给定文本的新文本节点
 appendChild() | 给定节点的子节点后面添加一个新节点
