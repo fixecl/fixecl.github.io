@@ -10,28 +10,28 @@ tags: JS
 {:toc}  
 
 ### 加入方式
-- 直接嵌入
+- 直接嵌入  
 ```js
 <Script type="text/javascript"> 
 //代码
 </Script>
 ```
-- 文件导入
+- 文件导入  
 ```js
 <script src="script.js"></script>
 ```
 - JS位置
-```<head>```部分：页面打开时执行
-```<body>```部分：解析到对应位置时执行
-直接执行：直接写语句
-事件执行：加入```function```，对位置无要求
+```<head>```部分：页面打开时执行  
+```<body>```部分：解析到对应位置时执行  
+直接执行：直接写语句  
+事件执行：加入```function```，对位置无要求  
 
 ### 基本语法
 - 注释：```/**/``` ```//``` 同C
 - JS区分大小写
 - 运算法则同Java
 - 定义变量var
-需以```字母``` ```_``` 或 ```$``` 开头
+需以```字母``` ```_``` 或 ```$``` 开头  
 - 判断：
 ```js
 if(条件)
@@ -50,10 +50,10 @@ function name(x,y,z)
 ```
 
 ### 数组
-定义：```var myarray=new Array();```
-或```var myarray=new Array(length);```
-JS中数组会自动扩充
-赋值： 
+定义：```var myarray=new Array();```   
+或```var myarray=new Array(length);```  
+JS中数组会自动扩充  
+赋值：   
 ```js
 myarr[i]=num(二维数组：myarr[i][j]);
 var myarray = new Array(66,80,90,77,59);
@@ -78,7 +78,7 @@ myarray.length可以查看和修改数组长度
     } 
 ```
 事件 | 说明
-- | -
+-|-
 onclick | 鼠标单击
 onmouseover | 鼠标经过
 onmouseout | 鼠标移开
@@ -90,19 +90,19 @@ onload | 网页加载
 onunload | 关闭网页
 
 ### 窗口相关
-```document.write``` 输出网页内容 回车```"<br>"```
-```alert```警告消息对话框
-```confirm(str)```确认消息对话框 返回boolean
-```prompt(display_str,default_str)```提问消息对话框
-点确定返回文本内容，点取消返回null
-```window.open([URL],[窗口名称],[参数])``` 返回窗口对象
-```"_top"、"_blank"、"_self"```具有特殊意义的窗口名称:
+输出网页内容```document.write```  回车```"<br>"```  
+警告消息对话框```alert```  
+```confirm(str)```确认消息对话框 返回boolean  
+```prompt(display_str,default_str)```提问消息对话框  
+点确定返回文本内容，点取消返回null  
+```window.open([URL],[窗口名称],[参数])``` 返回窗口对象  
+```"_top"、"_blank"、"_self"```具有特殊意义的窗口名称:  
 -  _blank：在新窗口显示目标网页
 -  _self：在当前窗口显示目标网页
 -  _top：框架网页中在上部窗口中显示目标网页
 
-```window.close()```关闭本窗口
-```窗口对象.close()```关闭对应窗口
+```window.close()```关闭本窗口  
+```窗口对象.close()```关闭对应窗口  
 
 ### JS DOM
 #### DOM节点：
