@@ -106,7 +106,18 @@ source /etc/profile
 ### 安装pip，安装python包  
 ``` bash 
 sudo apt install python-pip  
-sudo pip install jinja2 toml numpy pyyaml pyserial empy argparse  
+sudo pip install jinja2 toml numpy==1.16 pyyaml pyserial empy argparse  
+```  
+注意！ 系统默认python版本为2.7，而有的包目前已经不支持python2.7了，所以需要限制版本。  
+比如对于numpy，numpy1.17以上就不支持python2.7了，所以安装方式如下，其他所需包也一样  
+``` bash 
+pip install numpy==1.16  
+```  
+
+### 新版固件(1.10~)：安装pip3，安装python包  
+``` bash 
+sudo apt install python3-pip  
+sudo pip3 install jinja2 toml numpy pyyaml pyserial empy argparse  
 ```  
 注意！ 系统默认python版本为2.7，而有的包目前已经不支持python2.7了，所以需要限制版本。  
 比如对于numpy，numpy1.17以上就不支持python2.7了，所以安装方式如下，其他所需包也一样  
@@ -134,7 +145,7 @@ make px4_sitl jmavsim
 
 ## 编译固件  
 ```  bash
-make px4fmu-v2_default  
+make px4_fmu-v2_default  
 ```  
 最后编译到100%时链接会报错，这是因为FMUv2的flash只有1M，不够用，需要对其进行裁剪  
 如果到100%就表示成功，链接报错可以通过修改配置文件，裁剪一些功能来解决
