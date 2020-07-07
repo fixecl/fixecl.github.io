@@ -154,7 +154,7 @@ S: 0 1  10000  10000      0 -10000  10000
 6 | 通道的最大值限定 | 10000代表1，4000代表0.4
 
 控制组和控制通道在[PX4开发者网站](http://dev.px4.io/master/en/concept/mixing.html#control-group-0-flight-control)具有详细的说明  
-以控制组0为例，0-7的控制通道分别代表的含义如下：  
+以控制组0和1为例，0-7的控制通道分别代表的含义如下：  
 Control Group #0 (Flight Control)  
 0: roll (-1..1)  
 1: pitch (-1..1)  
@@ -164,6 +164,16 @@ Control Group #0 (Flight Control)
 5: spoilers (-1..1)  
 6: airbrakes (-1..1)  
 7: landing gear (-1..1)   
+Control Group #1 (Flight Control VTOL/Alternate)  
+0: roll ALT (-1..1)  
+1: pitch ALT (-1..1)  
+2: yaw ALT (-1..1)  
+3: throttle ALT (0..1 normal range, -1..1 for variable pitch / thrust reversers)  
+4: reserved / aux0  
+5: reserved / aux1  
+6: reserved / aux2  
+7: reserved / aux3  
+
 对照上面的```S:```描述：```S: 0 1  10000  10000      0 -10000  10000```  
 该句混控表示：混控的来源是控制组0的1通道：俯仰；负方向比例为1，正方向比例为1，所以不进行缩放；偏移为0，不进行偏移；上下限分别是-1到1。  
 
